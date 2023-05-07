@@ -27,7 +27,13 @@ class DoubanSpider(scrapy.Spider):
         count = 1
         for list_item in list_items:
             enemyStruct = EnemyStruct()
-            enemyStruct['enemy_id'] = list_item.xpath('.//td[@class="R"]/text()').get()
+            enemyStruct['enemy_id'] = count
+            enemyStruct['level_power'] = list_item.xpath('.//td[@class="R"][1]/text()').get()
+            enemyStruct['apper_type'] = list_item.xpath('.//td[@class="R"][2]/text()').get()
+            enemyStruct['apper_tower_left_hp'] = list_item.xpath('.//td[@class="R"][3]/text()').get()
+            enemyStruct['apper_sec'] = list_item.xpath('.//td[@class="R"][4]/text()').get()
+            enemyStruct['respawn_sec'] = list_item.xpath('.//td[@class="R"][5]/text()').get()
+            print(enemyStruct)
 
             count = count + 1
             yield enemyStruct

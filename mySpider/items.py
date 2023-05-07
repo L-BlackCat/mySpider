@@ -18,7 +18,7 @@ class EnemyStruct(scrapy.Item):
     # name = scrapy.Field()
     enemy_id = scrapy.Field()
     level_power = scrapy.Field()  # 强度倍率
-    apper_type = scrapy.Field()  # 出现率
+    apper_type = scrapy.Field()  # 出现数
     apper_tower_left_hp = scrapy.Field()  # 城联动
     apper_sec = scrapy.Field()  # 初登场秒数
     respawn_sec = scrapy.Field()  # 再登场
