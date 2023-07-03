@@ -35,3 +35,25 @@ class Chapter(scrapy.Item):
     enemy_max_cnt = scrapy.Field()  # 出击最大数
     enemy_struct_list = scrapy.Field()  # 敌人数据组
     pass
+
+
+class Layer(scrapy.Item):
+    id = scrapy.Field()
+    enemy_name = scrapy.Field()
+    strength = scrapy.Field()
+    number = scrapy.Field()
+    base_hp_per = scrapy.Field()
+    appear_time = scrapy.Field()
+    reappear_time_sec = scrapy.Field()
+
+
+class Stage(scrapy.Item):
+    id = scrapy.Field() #索引id,递增
+    bg_image_id = scrapy.Field()    #背景图，默认为1
+    energy = scrapy.Field()
+    exp_reward = scrapy.Field()
+    base_hp = scrapy.Field()
+    stage_width = scrapy.Field()
+    max_enemies = scrapy.Field()
+    layer_id_list = scrapy.Field()
+    layer_data_list = scrapy.Field()
